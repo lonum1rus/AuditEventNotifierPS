@@ -109,10 +109,10 @@ switch ($eventId) {
     { $_ -in @(4728, 4729, 4732, 4720, 4722, 4723, 4725, 4726, 4735, 4740) } { # Other specified event types
         $byUser = if ($message -match "Account Name:\s+([^\r\n]+)\r\n") { $matches[1].Trim() } else { "" }
         $user = if ($message -match "Account Name:\s+CN=([^,]+)") { $matches[1] } else { "" }
-        $department = if ($message -match "OU=([^,]+),OU=([^,]+)") { $matches[2] } else { "" }
+        $ou = if ($message -match "OU=([^,]+),OU=([^,]+)") { $matches[2] } else { "" }
         $groupName = if ($message -match "Group Name:\s+([^\r\n]+)") { $matches[1].Trim() } else { "" }
 
-        $formattedMessage = "Event ID: $eventId`nEvent Name: $eventName`nStatus: $status`nUser: $user`nDepartment: $department`nGroup Name: $groupName`nBy: $byUser"
+        $formattedMessage = "Event ID: $eventId`nEvent Name: $eventName`nStatus: $status`nUser: $user`nOU: $ou`nGroup Name: $groupName`nBy: $byUser"
     }
     default {
         # Default message format for unknown or unspecified events
