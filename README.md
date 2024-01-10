@@ -1,4 +1,4 @@
-# PowerShell Event Monitoring and Notification Script
+# Audit Events Monitoring and Notification using PowerShell
 
 ## Overview
 This PowerShell script is designed to monitor specific Windows Event IDs and send notifications via Telegram when these events occur. It's particularly useful for system administrators and IT professionals who need to stay informed about certain activities on their Windows systems.
